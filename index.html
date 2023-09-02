@@ -92,80 +92,78 @@
     <div class="container">
         <h1>Duygu Durumu Anketi</h1>
         <form>
-            <p>Depresyon:</p>
-            <p>1. Son hafta içinde kendinizi ne sıklıkla üzgün veya hüzünlü hissettiniz?</p>
-            <input type="radio" name="depresyon1" value="0"> Hiçbir zaman 
-            <input type="radio" name="depresyon1" value="1"> Nadiren 
-            <input type="radio" name="depresyon1" value="2"> Arada bir 
-            <input type="radio" name="depresyon1" value="3"> Sıkça 
-            <input type="radio" name="depresyon1" value="4"> Her zaman 
-
-            <p>2. Son hafta içinde kendinizi ne sıklıkla enerjisiz hissettiniz?</p>
-            <input type="radio" name="depresyon2" value="0"> Hiçbir zaman 
-            <input type="radio" name="depresyon2" value="1"> Nadiren 
-            <input type="radio" name="depresyon2" value="2"> Arada bir 
-            <input type="radio" name="depresyon2" value="3"> Sıkça 
-            <input type="radio" name="depresyon2" value="4"> Her zaman 
-
-            <p>Anksiyete:</p>
-            <p>3. Son hafta içinde sinirli hissetme sıklığınız nedir?</p>
-            <input type="radio" name="anksiyete3" value="0"> Hiçbir zaman 
-            <input type="radio" name="anksiyete3" value="1"> Nadiren 
-            <input type="radio" name="anksiyete3" value="2"> Arada bir 
-            <input type="radio" name="anksiyete3" value="3"> Sıkça 
-            <input type="radio" name="anksiyete3" value="4"> Her zaman 
-
-            <p>4. Son iki hafta içinde, kaygı veya endişe nedeniyle zorluk yaşadınız mı?</p>
-            <input type="radio" name="anksiyete4" value="0"> Hiçbir zaman 
-            <input type="radio" name="anksiyete4" value="1"> Nadiren 
-            <input type="radio" name="anksiyete4" value="2"> Arada bir 
-            <input type="radio" name="anksiyete4" value="3"> Sıkça 
-            <input type="radio" name="anksiyete4" value="4"> Her zaman 
-
-            <p>Duygusal Zeka:</p>
-            <p>5. Duygusal tepkileri anlama sıklığınız nedir?</p>
-            <input type="radio" name="duygusalZeka5" value="1"> Hiçbir zaman 
-            <input type="radio" name="duygusalZeka5" value="2"> Nadiren 
-            <input type="radio" name="duygusalZeka5" value="3"> Arada bir 
-            <input type="radio" name="duygusalZeka5" value="4"> Sıkça 
-            <input type="radio" name="duygusalZeka5" value="5"> Her zaman 
-
-            <p>6. Kendi duygusal tepkilerinizi kontrol etme sıklığınız nedir?</p>
-            <input type="radio" name="duygusalZeka6" value="1"> Hiçbir zaman 
-            <input type="radio" name="duygusalZeka6" value="2"> Nadiren 
-            <input type="radio" name="duygusalZeka6" value="3"> Arada bir 
-            <input type="radio" name="duygusalZeka6" value="4"> Sıkça 
-            <input type="radio" name="duygusalZeka6" value="5"> Her zaman 
-
-            <p>Stres:</p>
-            <p>7. Son ay içinde, stres nedeniyle mide rahatsızlığı yaşadınız mı?</p>
-            <input type="radio" name="stres7" value="0"> Hiçbir zaman 
-            <input type="radio" name="stres7" value="1"> Nadiren 
-            <input type="radio" name="stres7" value="2"> Arada bir 
-            <input type="radio" name="stres7" value="3"> Sıkça 
-            <input type="radio" name="stres7" value="4"> Her zaman 
-
-            <p>8. Son hafta içinde, stres nedeniyle uyku düzeninizde değişiklikler yaşadınız mı?</p>
-            <input type="radio" name="stres8" value="0"> Hiçbir zaman 
-            <input type="radio" name="stres8" value="1"> Nadiren 
-            <input type="radio" name="stres8" value="2"> Arada bir 
-            <input type="radio" name="stres8" value="3"> Sıkça 
-            <input type="radio" name="stres8" value="4"> Her zaman 
-
-            <p>Diğer Duygu Durumu Ölçekleri:</p>
-            <p>9. Son iki hafta içinde, gelecekle ilgili endişeler sizi ne sıklıkla meşgul etti?</p>
-            <input type="radio" name="digerSorular9" value="0"> Hiçbir zaman 
-            <input type="radio" name="digerSorular9" value="1"> Nadiren 
-            <input type="radio" name="digerSorular9" value="2"> Arada bir 
-            <input type="radio" name="digerSorular9" value="3"> Sıkça 
-            <input type="radio" name="digerSorular9" value="4"> Her zaman 
-
-            <p>10. Son 24 saat içinde, mutlu hissetme sıklığınız nedir?</p>
-            <input type="radio" name="digerSorular10" value="1"> Hiçbir zaman 
-            <input type="radio" name="digerSorular10" value="2"> Nadiren 
-            <input type="radio" name="digerSorular10" value="3"> Arada bir 
-            <input type="radio" name="digerSorular10" value="4"> Sıkça 
-            <input type="radio" name="digerSorular10" value="5"> Her zaman 
+            <form id="anketForm">
+        <label for="duyguDurumu">Bugün nasıl hissediyorsun?</label>
+        <select id="duyguDurumu">
+            <option value="1">Kötü</option>
+            <option value="2">Biraz kötü</option>
+            <option value="3">Normal</option>
+            <option value="4">İyi</option>
+            <option value="5">Çok iyi</option>
+        </select>
+        
+        <label for="enerjiDurumu">Bugünkü enerjin nasıl?</label>
+        <select id="enerjiDurumu">
+            <option value="1">Kötü</option>
+            <option value="2">Biraz kötü</option>
+            <option value="3">Normal</option>
+            <option value="4">İyi</option>
+            <option value="5">Çok iyi</option>
+        </select>
+        
+        <label for="duyguYoğunluğu">Bugün duygu yoğunluğun hangi seviyelerde?</label>
+        <select id="duyguYoğunluğu">
+            <option value="1">Yok</option>
+            <option value="2">Seyrek</option>
+            <option value="3">Az Yoğun</option>
+            <option value="4">Orta Yoğun</option>
+            <option value="5">Yoğun</option>
+        </select>
+        
+        <label for="sosyalPil">Sosyal pilin ne seviyede?</label>
+        <select id="sosyalPil">
+            <option value="1">Kötü</option>
+            <option value="2">Biraz kötü</option>
+            <option value="3">Normal</option>
+            <option value="4">İyi</option>
+            <option value="5">Çok iyi</option>
+        </select>
+        
+        <label for="dunDurumu">Dün nasıl bir gündü?</label>
+        <select id="dunDurumu">
+            <option value="1">Kötü</option>
+            <option value="2">Biraz kötü</option>
+            <option value="3">Normal</option>
+            <option value="4">İyi</option>
+            <option value="5">Çok iyi</option>
+        </select>
+        
+        <label for="beklenti">Bugünden beklentin nedir?</label>
+        <select id="beklenti">
+            <option value="1">Yok</option>
+            <option value="2">Düşük</option>
+            <option value="3">Orta</option>
+            <option value="4">İyi</option>
+            <option value="5">Yüksek</option>
+        </select>
+        
+        <label for="yakinlik">İnsanlara Karşı ne derecede yakınlık hissediyorsun?</label>
+        <select id="yakinlik">
+            <option value="1">Hiç</option>
+            <option value="2">Seyrek</option>
+            <option value="3">Biraz</option>
+            <option value="4">Orta</option>
+            <option value="5">Yoğun</option>
+        </select>
+        
+        <label for="efesIletisim">Efesle iletişimini hangi seviyelerde tutmak istiyorsun?</label>
+        <select id="efesIletisim">
+            <option value="1">Seyrek</option>
+            <option value="2">Az Yoğun</option>
+            <option value="3">Orta Yoğun</option>
+            <option value="4">Yoğun</option>
+            <option value="5">Çok Yoğun</option>
+        </select>
 
             <br>
             <input type="button" value="Hesapla" onclick="hesaplaDuyguDurumu()">
