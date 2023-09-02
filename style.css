@@ -1,59 +1,56 @@
 body {
-    font-family: 'Gloria Hallelujah', cursive;
-font-family: 'Montserrat Alternates', sans-serif;
+
+    background-image:("_73205a5b-001e-40a5-96bb-d52b7f2a4372-2.jpg" );
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #af9b9b; /* Beyaz container arka plan rengi */
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+#anketForm {
+    background-color: rgb(164, 189, 212);
     border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    width: 300px;
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
-    color: #723024; /* Nar çiçeği kırmızısı başlık metni rengi */
+    color: #345f7c;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
-form p {
-    font-weight: bold;
-    color: #011b18; /* Orta mavi soru metni rengi */
+label, select {
+    display: block;
+    margin: 10px 0;
 }
 
-input[type="radio"] {
-    margin-right: 10px;
-}
-
-#sonuc {
-    font-weight: bold;
-    font-size: 28px;
-    text-align: center;
-    margin-top: 20px;
+select {
+    width: 100%;
     padding: 10px;
+    border: 1px solid rgb(133, 133, 133);
     border-radius: 5px;
 }
 
-/* Renkli sonuçlar için sınıflar */
-.mutlu-sonuc {
-    color: #32CD32; /* Lime yeşili */
+button {
+    background-color: #196338;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-.huzunlu-sonuc {
-    color: #8B0000; /* Koyu kırmızı */
+button:hover {
+    background-color: #219A52;
 }
 
-/* Soruların animasyonlu geçişi için efektler */
-.sorular {
-    animation: fadein 1s ease-in-out;
-}
-
-@keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+#sonuc {
+    color: rgb(255, 255, 255);
+    align-items:flex-end;
 }
