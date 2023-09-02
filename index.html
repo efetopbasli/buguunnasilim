@@ -1,98 +1,14 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html>
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Montserrat+Alternates:wght@700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duygu Durumu Anketi</title>
-    <style>
-        body {
-            font-family: 'Gloria Hallelujah', cursive;
-            background-color: #360808;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: rgb(231, 231, 231);
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        form p {
-            font-weight: bold;
-        }
-
-        input[type="radio"] {
-            margin-right: 5px;
-        }
-
-        #sonuc {
-            font-weight: bold;
-            font-size: 24px;
-            text-align: center;
-            margin-top: 20px;
-        }
-    </style>
-    <script>
-        function hesaplaDuyguDurumu() {
-            var toplamPuan = 0;
-
-            // Soru 1-2 (Depresyon)
-            var depresyon1 = parseInt(document.querySelector('input[name="depresyon1"]:checked').value);
-            var depresyon2 = parseInt(document.querySelector('input[name="depresyon2"]:checked').value);
-
-            // Soru 3-4 (Anksiyete)
-            var anksiyete3 = parseInt(document.querySelector('input[name="anksiyete3"]:checked').value);
-            var anksiyete4 = parseInt(document.querySelector('input[name="anksiyete4"]:checked').value);
-
-            // Soru 5-6 (Duygusal Zeka)
-            var duygusalZeka5 = parseInt(document.querySelector('input[name="duygusalZeka5"]:checked').value);
-            var duygusalZeka6 = parseInt(document.querySelector('input[name="duygusalZeka6"]:checked').value);
-
-            // Soru 7-8 (Stres)
-            var stres7 = parseInt(document.querySelector('input[name="stres7"]:checked').value);
-            var stres8 = parseInt(document.querySelector('input[name="stres8"]:checked').value);
-
-            // Soru 9-10 (Diğer Duygu Durumu Ölçekleri)
-            var digerSorular9 = parseInt(document.querySelector('input[name="digerSorular9"]:checked').value);
-            var digerSorular10 = parseInt(document.querySelector('input[name="digerSorular10"]:checked').value);
-
-            // Toplam puanı hesapla
-            toplamPuan = depresyon1 + depresyon2 + anksiyete3 + anksiyete4 + duygusalZeka5 + duygusalZeka6 + stres7 + stres8 + digerSorular9 + digerSorular10;
-
-            // Sonucu hesapla
-            var sonuc = "";
-
-            if (toplamPuan <= 10) {
-                sonuc = "Duygu Durumunuz Çok İyi";
-            } else if (toplamPuan <= 20) {
-                sonuc = "Duygu Durumunuz İyi";
-            } else if (toplamPuan <= 30) {
-                sonuc = "Duygu Durumunuz Orta";
-            } else if (toplamPuan <= 40) {
-                sonuc = "Duygu Durumunuz Kötü";
-            } else {
-                sonuc = "Duygu Durumunuz Çok Kötü";
-            }
-
-            document.getElementById("sonuc").innerHTML = "Sonuç: " + sonuc;
-        }
-    </script>
+    <link rel="stylesheet" href="style.css">
+    <title>Duygu ve Enerji Anketi</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Duygu Durumu Anketi</h1>
-        <form>
-            <form id="anketForm">
+    <h1></h1>
+    
+    <form id="anketForm">
         <label for="duyguDurumu">Bugün nasıl hissediyorsun?</label>
         <select id="duyguDurumu">
             <option value="1">Kötü</option>
@@ -156,7 +72,7 @@
             <option value="5">Yoğun</option>
         </select>
         
-        <label for="efesIletisim">Efesle iletişimini hangi seviyelerde tutmak istiyorsun?</label>
+        <label for="efesIletisim">Efesle iletişimini hangi melek seviyesinde tutmak istiyorsun?</label>
         <select id="efesIletisim">
             <option value="1">Seyrek</option>
             <option value="2">Az Yoğun</option>
@@ -164,12 +80,44 @@
             <option value="4">Yoğun</option>
             <option value="5">Çok Yoğun</option>
         </select>
-
-            <br>
-            <input type="button" value="Hesapla" onclick="hesaplaDuyguDurumu()">
-        </form>
-
-        <div id="sonuc"></div>
-    </div>
+        
+        <button type="button" onclick="hesapla()">Anketi Tamamla</button>
+    </form>
+    
+    <div id="sonuc"></div>
+    
+    <script>
+        function hesapla() {
+            // Seçilen tüm değerleri al
+            var duyguDurumu = parseInt(document.getElementById("duyguDurumu").value);
+            var enerjiDurumu = parseInt(document.getElementById("enerjiDurumu").value);
+            var duyguYoğunluğu = parseInt(document.getElementById("duyguYoğunluğu").value);
+            var sosyalPil = parseInt(document.getElementById("sosyalPil").value);
+            var dunDurumu = parseInt(document.getElementById("dunDurumu").value);
+            var beklenti = parseInt(document.getElementById("beklenti").value);
+            var yakinlik = parseInt(document.getElementById("yakinlik").value);
+            var efesIletisim = parseInt(document.getElementById("efesIletisim").value);
+            
+            // Toplam puanı hesapla
+            var toplamPuan = duyguDurumu + enerjiDurumu + duyguYoğunluğu + sosyalPil + dunDurumu + beklenti + yakinlik + efesIletisim;
+            
+            // Olumluluk durumunu belirle
+            var olumlulukDurumu = "";
+            if (toplamPuan >= 0 && toplamPuan < 8) {
+                olumlulukDurumu = "Çok Kötü";
+            } else if (toplamPuan >= 8 && toplamPuan < 16) {
+                olumlulukDurumu = "Kötü";
+            } else if (toplamPuan >= 16 && toplamPuan < 24) {
+                olumlulukDurumu = "Orta";
+            } else if (toplamPuan >= 24 && toplamPuan < 32) {
+                olumlulukDurumu = "İyi";
+            } else {
+                olumlulukDurumu = "Çok İyi";
+            }
+            
+            // Sonucu ekranda göster
+            document.getElementById("sonuc").innerHTML = "Olumluluk Durumu: " + olumlulukDurumu;
+        }
+    </script>
 </body>
 </html>
